@@ -1,0 +1,49 @@
+.result-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: $VeryDarkCyan;
+  padding: 10px;
+  border-radius: 10px;
+
+  .tipAmount-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        margin: 4px;
+        color: $White;
+      }
+
+      p {
+        margin: 2px;
+        color: $LightGrayishCyan;
+      }
+    }
+
+    h1 {
+      color: $Strongcyan;
+    }
+  }
+
+  .btn-box {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6vh;
+    margin-bottom: 2vh;
+    button {
+      width: 80%;
+      background-color: $Strongcyan;
+      color: black;
+      font-weight: 700;
+      height: 50px;
+    }
+  }
+}

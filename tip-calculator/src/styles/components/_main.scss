@@ -1,0 +1,10 @@
+.main_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: $White;
+  border-radius: 15px;
+  padding: 2em;
+  max-width: 80vh;
+  align-items: center;
+  justify-content: center;
+}
