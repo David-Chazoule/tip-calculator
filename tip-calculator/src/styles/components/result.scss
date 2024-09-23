@@ -3,47 +3,85 @@
   flex-direction: column;
   width: 100%;
   background-color: $VeryDarkCyan;
-  padding: 10px;
+  padding: 16px;
   border-radius: 10px;
 
-  .tipAmount-box {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    span {
-      display: flex;
-      flex-direction: column;
-
-      h3 {
-        margin: 4px;
-        color: $White;
-      }
-
-      p {
-        margin: 2px;
-        color: $LightGrayishCyan;
-      }
-    }
-
-    h1 {
-      color: $Strongcyan;
-    }
+  @media screen and (max-width: 630px) {
+    width: 90%;
   }
 
-  .btn-box {
+  div {
     display: flex;
-    width: 100%;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-top: 6vh;
-    margin-bottom: 2vh;
-    button {
-      width: 80%;
-      background-color: $Strongcyan;
-      color: black;
-      font-weight: 700;
-      height: 50px;
+    padding: 6px;
+    .tipAmount-box {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2vh;
+      margin-top: 6px;
+
+      span {
+        display: flex;
+        flex-direction: column;
+
+        h5 {
+          margin: 4px;
+          color: $White;
+        }
+
+        p {
+          margin: 1px;
+          color: $LightGrayishCyan;
+          font-size: 14px;
+        }
+      }
+
+      h1 {
+        color: $Strongcyan;
+        font-size: 40px;
+        margin-right: 6px;
+      }
+    }
+
+    .btn-box {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10vh;
+      margin-bottom: 1vh;
+      @media screen and (max-width: 630px) {
+        margin-top: 2vh;
+      }
+
+      button {
+        width: 90%;
+        background-color: $Strongcyan;
+        color: $VeryDarkCyan;
+        font-weight: 800;
+        font-size: 20px;
+        height: 50px;
+        border-radius: 6px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $LightGrayishCyan;
+        }
+      }
+
+      button.notCalculed {
+        background-color: $DarkGrayishCyan;
+        color: $VeryDarkCyan;
+
+        &:hover {
+          background-color: $LightGrayishCyan;
+          color: $DarkGrayishCyan;
+        }
+      }
     }
   }
 }

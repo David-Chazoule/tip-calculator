@@ -3,8 +3,41 @@
   grid-template-columns: 1fr 1fr;
   background-color: $White;
   border-radius: 15px;
-  padding: 2em;
-  max-width: 80vh;
-  align-items: center;
-  justify-content: center;
+  padding: 1.5em 1.5em 0em 1.5em;
+  max-width: 90vh;
+  height: auto;
+
+  @media screen and (max-width: 840px) {
+    max-width: 70vh;
+  }
+  @media screen and (max-width: 630px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: auto;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5em;
+  }
+
+  .calculator_container {
+    display: flex;
+    width: 100%;
+
+    @media screen and (max-width: 630px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .result_container {
+    @media screen and (max-width: 630px) {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }

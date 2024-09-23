@@ -2,18 +2,28 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-
+  padding: 10px;
   form {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
 
+    @media screen and (max-width: 630px) {
+      display: flex;
+      flex-direction: column;
+      min-width: auto;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+    }
+
     .bill-box {
       display: flex;
       flex-direction: column;
-      width: 80%;
+      width: 90%;
 
       label {
         margin-bottom: 5px;
+        color: $GrayishCyan;
       }
 
       span {
@@ -21,13 +31,30 @@
         display: flex;
         justify-content: space-between;
         background-color: $VeryLightGrayishCyan;
-        height: 30px;
-        padding: 10px;
+        height: 42px;
+        padding: 16px;
+        border-radius: 5px;
+        cursor: pointer;
 
         input {
           background-color: $VeryLightGrayishCyan;
           border: none;
           width: 100%;
+          height: 38px;
+          font-size: 24px;
+          font-weight: 800;
+          color: $GrayishCyan;
+          text-align: end;
+          font-family: $font;
+          cursor: pointer;
+          &::placeholder {
+            color: $GrayishCyan;
+            font-weight: 700;
+          }
+
+          &:focus {
+            outline: none;
+          }
         }
       }
     }
@@ -35,38 +62,171 @@
     .select-tip-box {
       display: flex;
       flex-direction: column;
+
+      @media screen and (max-width: 630px) {
+        align-items: center;
+        justify-content: center;
+      }
       label {
         margin-bottom: 5px;
+        color: $GrayishCyan;
       }
 
       .select-line {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 10px;
-        margin-bottom: 10px;
-        width: 80%;
+        margin-bottom: 20px;
+        width: 90%;
+
+        @media screen and (max-width: 630px) {
+          display: grid;
+
+          grid-template-columns: 1fr 1fr;
+          grid-auto-rows: minmax(40px, auto);
+          grid-gap: 10px;
+          grid-template-areas:
+            "btn1 btn2"
+            "btn3 btn4"
+            "btn5 custom";
+
+          #btn1 {
+            grid-area: btn1;
+          }
+          #btn2 {
+            grid-area: btn2;
+          }
+          #btn3 {
+            grid-area: btn3;
+          }
+          #btn4 {
+            grid-area: btn4;
+          }
+          #btn5 {
+            grid-area: btn5;
+          }
+          .custom-input {
+            grid-area: custom;
+          }
+        }
+
+        .select-tip-box {
+          display: flex;
+          flex-direction: column;
+          label {
+            margin-bottom: 5px;
+            color: $GrayishCyan;
+          }
+
+          .select-line {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 10px;
+            margin-bottom: 20px;
+            width: 90%;
+
+            span {
+              display: flex;
+              background-color: $VeryDarkCyan;
+              height: 40px;
+              color: $White;
+              font-size: 20px;
+              text-align: center;
+              align-items: center;
+              justify-content: center;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+
+            .selected {
+              background-color: $Strongcyan;
+            }
+
+            .custom-input {
+              background-color: $VeryLightGrayishCyan;
+              height: 40px;
+              border-radius: 5px;
+              cursor: pointer;
+              input {
+                width: 98%;
+                border: none;
+                background-color: $VeryLightGrayishCyan;
+                text-align: end;
+                padding: 12px;
+                height: 36px;
+                color: $GrayishCyan;
+                font-weight: 700;
+                font-size: 18px;
+                cursor: pointer;
+                font-family: $font;
+
+                &::placeholder {
+                  color: $GrayishCyan;
+                  font-weight: 700;
+                  letter-spacing: 2px;
+                  text-align: center;
+                }
+
+                &:focus {
+                  outline: none;
+                }
+                @media screen and (max-width: 840px) {
+                  font-size: 14px;
+                  padding: 6px;
+                }
+              }
+            }
+          }
+        }
 
         span {
+          display: flex;
           background-color: $VeryDarkCyan;
-          height: 30px;
+          height: 40px;
           color: $White;
+          font-size: 20px;
           text-align: center;
           align-items: center;
           justify-content: center;
           border-radius: 5px;
+          cursor: pointer;
+        }
+
+        .selected {
+          background-color: $Strongcyan;
         }
 
         .custom-input {
           background-color: $VeryLightGrayishCyan;
-          height: 30px;
+          height: 40px;
           border-radius: 5px;
+          cursor: pointer;
           input {
             width: 98%;
             border: none;
             background-color: $VeryLightGrayishCyan;
-            text-align: center;
-            height: 30px;
-            border-radius: 5px;
+            text-align: end;
+            padding: 12px;
+            height: 36px;
+            color: $GrayishCyan;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            font-family: $font;
+
+            &::placeholder {
+              color: $GrayishCyan;
+              font-weight: 700;
+              letter-spacing: 2px;
+            }
+
+            &:focus {
+              outline: none;
+            }
+            @media screen and (max-width: 840px) {
+              font-size: 14px;
+              padding: 6px;
+            }
           }
         }
       }
@@ -79,25 +239,69 @@
       align-items: start;
       margin-top: 30px;
 
-      label {
-        margin-bottom: 5px;
+      @media screen and (max-width: 630px) {
+        margin: 10px 0;
+        align-items: center;
+        justify-content: center;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        justify-content: space-between;
+
+        label {
+          margin-bottom: 5px;
+          color: $GrayishCyan;
+        }
+
+        p {
+          color: red;
+          font-size: 12px;
+        }
       }
 
       .input-people {
         display: flex;
-        width: 80%;
+        width: 90%;
         background-color: $VeryLightGrayishCyan;
-        height: 30px;
+        height: 42px;
         align-items: center;
-        padding: 10px;
+        padding: 16px;
+        border-radius: 5px;
+        cursor: pointer;
 
         input {
-          width: 100%;
-          border: none;
           background-color: $VeryLightGrayishCyan;
-          height: 30px;
+          border: none;
+          width: 100%;
+          height: 38px;
+          font-size: 24px;
+          font-weight: 800;
+          color: $GrayishCyan;
+          text-align: end;
+          cursor: pointer;
+          font-family: $font;
+
+          &::placeholder {
+            color: $GrayishCyan;
+            font-weight: 700;
+          }
+
+          &:focus {
+            outline: none;
+          }
         }
       }
     }
+  }
+
+  .selectedCustom {
+    border: 2px solid $Strongcyan;
+  }
+
+  .error {
+    border: 2px solid red;
   }
 }
