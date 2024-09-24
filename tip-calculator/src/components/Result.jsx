@@ -13,6 +13,8 @@ function Result({
   setSelected,
   setCustomTip,
 }) {
+
+  //reset 
   const handleReset = () => {
     setTipAmount(0);
     setTotal(0);

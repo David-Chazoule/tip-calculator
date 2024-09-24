@@ -1,15 +1,13 @@
-
-import './App.css';
-import Main from './components/Main';
+import Main from "./components/Main";
 
 function App() {
   return (
     <div className="App">
-      <span className='title'>
+      <span className="title">
         <p>SPLI</p>
         <p>TTER</p>
       </span>
-      <Main/>
+      <Main />
     </div>
   );
 }

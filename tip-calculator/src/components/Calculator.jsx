@@ -17,15 +17,20 @@ function Calculator({
   customTip,
   setCustomTip,
 }) {
+  
+  // Function to calculate total tips and the final amount
   const calculateTotals = useCallback(() => {
+    // If all required inputs are present
     if (bill && peopleNumber && selectTip) {
-      let bills = Number(bill);
-      let peopleNumbers = Number(peopleNumber);
-      let tipSelected = Number(selectTip);
+      let bills = Number(bill); // Convert bill to number
+      let peopleNumbers = Number(peopleNumber); // Convert number of people to number
+      let tipSelected = Number(selectTip); // Convert selected tip percentage to number
 
+      // Calculate the tip amount based on the bill
       let tipsValue = bills * (tipSelected / 100);
       setTipAmount(tipsValue);
 
+      // Calculate the total tip value based on the number of people
       let totaltipsvalue = tipsValue * peopleNumbers;
       setTotal(totaltipsvalue);
 
@@ -33,10 +38,12 @@ function Calculator({
     }
   }, [bill, peopleNumber, selectTip, setTipAmount, setTotal, setIsCalculed]);
 
+  // useEffect to call calculateTotals whenever dependencies change
   useEffect(() => {
     calculateTotals();
   }, [calculateTotals]);
 
+  // Handler for selecting a predefined tip percentage
   const handleValueTip = (e) => {
     const value = e.target.getAttribute("value");
     setSelectTip(value);
@@ -44,15 +51,18 @@ function Calculator({
     setSelected(value);
   };
 
+  // Restrict input to numbers only for any input field
   const handleNumericInput = (e, setState) => {
     const value = e.target.value;
 
+    // Remove any non-numeric characters except for one decimal point
     const numericValue = value
       .replace(/[^0-9.]/g, "")
       .replace(/(\..*)\./g, "$1");
     setState(numericValue);
   };
 
+  // Handler for custom tip input
   const handleCustomInput = (e) => {
     const value = e.target.value;
     const numericValue = value
@@ -63,12 +73,14 @@ function Calculator({
     setSelected("");
   };
 
+  // Clear selection when custom tip input is empty
   const handleBlur = () => {
     if (customTip === "") {
       setSelected("");
     }
   };
 
+  // Flag for invalid number of people (zero or empty)
   const isPeopleNumberInvalid = bill && selectTip && peopleNumber === "";
 
   return (
@@ -89,7 +101,9 @@ function Calculator({
         </div>
 
         <div className="select-tip-box">
-          <label>Select Tip %</label>
+          <span className="tip-title">
+            <label>Select Tip %</label>
+          </span>
           <div className="select-line">
             <span
               id="btn1"

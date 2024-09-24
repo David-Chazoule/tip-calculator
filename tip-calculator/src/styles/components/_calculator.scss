@@ -21,9 +21,14 @@
       flex-direction: column;
       width: 90%;
 
+      @media screen and (max-width: 630px) {
+        margin-bottom: 4vh;
+      }
+
       label {
         margin-bottom: 5px;
         color: $GrayishCyan;
+        font-weight: 700;
       }
 
       span {
@@ -37,24 +42,7 @@
         cursor: pointer;
 
         input {
-          background-color: $VeryLightGrayishCyan;
-          border: none;
-          width: 100%;
-          height: 38px;
-          font-size: 24px;
-          font-weight: 800;
-          color: $GrayishCyan;
-          text-align: end;
-          font-family: $font;
-          cursor: pointer;
-          &::placeholder {
-            color: $GrayishCyan;
-            font-weight: 700;
-          }
-
-          &:focus {
-            outline: none;
-          }
+          @include inputBillPeople;
         }
       }
     }
@@ -67,9 +55,18 @@
         align-items: center;
         justify-content: center;
       }
-      label {
+
+      .tip-title {
+        display: flex;
+        width: 90%;
+        align-items: start;
         margin-bottom: 5px;
-        color: $GrayishCyan;
+
+        label {
+          margin-bottom: 5px;
+          color: $GrayishCyan;
+          font-weight: 700;
+        }
       }
 
       .select-line {
@@ -80,8 +77,6 @@
         width: 90%;
 
         @media screen and (max-width: 630px) {
-          display: grid;
-
           grid-template-columns: 1fr 1fr;
           grid-auto-rows: minmax(40px, auto);
           grid-gap: 10px;
@@ -110,75 +105,6 @@
           }
         }
 
-        .select-tip-box {
-          display: flex;
-          flex-direction: column;
-          label {
-            margin-bottom: 5px;
-            color: $GrayishCyan;
-          }
-
-          .select-line {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-gap: 10px;
-            margin-bottom: 20px;
-            width: 90%;
-
-            span {
-              display: flex;
-              background-color: $VeryDarkCyan;
-              height: 40px;
-              color: $White;
-              font-size: 20px;
-              text-align: center;
-              align-items: center;
-              justify-content: center;
-              border-radius: 5px;
-              cursor: pointer;
-            }
-
-            .selected {
-              background-color: $Strongcyan;
-            }
-
-            .custom-input {
-              background-color: $VeryLightGrayishCyan;
-              height: 40px;
-              border-radius: 5px;
-              cursor: pointer;
-              input {
-                width: 98%;
-                border: none;
-                background-color: $VeryLightGrayishCyan;
-                text-align: end;
-                padding: 12px;
-                height: 36px;
-                color: $GrayishCyan;
-                font-weight: 700;
-                font-size: 18px;
-                cursor: pointer;
-                font-family: $font;
-
-                &::placeholder {
-                  color: $GrayishCyan;
-                  font-weight: 700;
-                  letter-spacing: 2px;
-                  text-align: center;
-                }
-
-                &:focus {
-                  outline: none;
-                }
-                @media screen and (max-width: 840px) {
-                  font-size: 14px;
-                  padding: 6px;
-                }
-              }
-            }
-          }
-        }
-
         span {
           display: flex;
           background-color: $VeryDarkCyan;
@@ -190,10 +116,13 @@
           justify-content: center;
           border-radius: 5px;
           cursor: pointer;
-        }
 
-        .selected {
-          background-color: $Strongcyan;
+          &.selected {
+            background-color: $Strongcyan;
+          }
+          &:hover {
+            background-color: $Strongcyan;
+          }
         }
 
         .custom-input {
@@ -201,11 +130,12 @@
           height: 40px;
           border-radius: 5px;
           cursor: pointer;
+
           input {
             width: 98%;
             border: none;
             background-color: $VeryLightGrayishCyan;
-            text-align: end;
+            text-align: right;
             padding: 12px;
             height: 36px;
             color: $GrayishCyan;
@@ -218,11 +148,13 @@
               color: $GrayishCyan;
               font-weight: 700;
               letter-spacing: 2px;
+              text-align: center;
             }
 
             &:focus {
               outline: none;
             }
+
             @media screen and (max-width: 840px) {
               font-size: 14px;
               padding: 6px;
@@ -240,7 +172,7 @@
       margin-top: 30px;
 
       @media screen and (max-width: 630px) {
-        margin: 10px 0;
+        margin: 10px 0 4vh 0;
         align-items: center;
         justify-content: center;
       }
@@ -254,6 +186,7 @@
         label {
           margin-bottom: 5px;
           color: $GrayishCyan;
+          font-weight: 700;
         }
 
         p {
@@ -273,25 +206,7 @@
         cursor: pointer;
 
         input {
-          background-color: $VeryLightGrayishCyan;
-          border: none;
-          width: 100%;
-          height: 38px;
-          font-size: 24px;
-          font-weight: 800;
-          color: $GrayishCyan;
-          text-align: end;
-          cursor: pointer;
-          font-family: $font;
-
-          &::placeholder {
-            color: $GrayishCyan;
-            font-weight: 700;
-          }
-
-          &:focus {
-            outline: none;
-          }
+          @include inputBillPeople;
         }
       }
     }
