@@ -3,7 +3,7 @@
 <img src="https://i.imgur.com/LVuSxvw.png" alt="age calculator tip empty" style="width:400px; height:auto;">    <img src="https://i.imgur.com/KAyKOk7.png" alt="result screen" style="width:400px; height:auto;">
 
 
-This is my solution to the [tip Calculator Challenge]([https://www.frontendmentor.io/challenges/mortgage-repayment-calculator-Galx1LXK73](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q)) on Frontend Mentor.
+This is my solution to the [tip Calculator Challenge](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX) on Frontend Mentor.
 
 [Online here](https://david-chazoule.github.io/tip-calculator/)
 
